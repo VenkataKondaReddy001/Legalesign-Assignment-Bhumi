@@ -1,7 +1,7 @@
 import Moment from 'react-moment'
 import './album.css'
 
-const Album = ({ albumData, selectedAlbum, albumSelection }) => {
+const Album = ({ albumData, selectedAlbum, albumSelection, index }) => {
 
 
     return (
@@ -16,7 +16,7 @@ const Album = ({ albumData, selectedAlbum, albumSelection }) => {
 
             <div className="flex flex-row items-center w-full pl-3 md:pl-5 md:pl-6 lg:pl-6" onClick={albumSelection(albumData)}>
                 <div className="flex flex-col w-9/12" title={albumData.title.label}>
-                    <div className="text-md font-bold h-6 truncate" >{albumData["im:name"].label}</div>
+                    <div className="text-md font-bold h-6 truncate" >{index} . {albumData["im:name"].label}</div>
                     <div className="text-sm">{albumData["im:artist"].label} ( {albumData["im:itemCount"].label} songs )</div>
                     <div className="text-sm">{albumData["im:price"].label}</div>
                 </div>

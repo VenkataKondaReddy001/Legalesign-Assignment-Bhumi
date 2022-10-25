@@ -91,7 +91,7 @@ const MusicLibrary = () => {
             <div className="rounded-xl bg-gray-900 w-full min-h-screen p-4">
 
               <h1 className='text-center text-lg font-bold text-white flex justify-center'>
-                <img className='h-8 w-8' src="https://fc-euc1-00-pics-bkt-00.s3.amazonaws.com/0503658ea6cd8b74d5fbad80cc30943ce572cd3e7c114b58f7057a9a85b39e4f/f_marketingpicFull/u_42ccc176c6c2a38b131f3c4b3eb93271429345f4fd5e504decf0ab9ad13dc3b3/img_vvmnl6bact_e38948873531546f1856b3efcb6778bbd8b0014716005c147d558f9a09aa9815.png" alt="Legalesign Logo"/> Legalesign Music Store : Top Albums
+                <img className='h-8 w-8' src="https://fc-euc1-00-pics-bkt-00.s3.amazonaws.com/0503658ea6cd8b74d5fbad80cc30943ce572cd3e7c114b58f7057a9a85b39e4f/f_marketingpicFull/u_42ccc176c6c2a38b131f3c4b3eb93271429345f4fd5e504decf0ab9ad13dc3b3/img_vvmnl6bact_e38948873531546f1856b3efcb6778bbd8b0014716005c147d558f9a09aa9815.png" alt="Legalesign Logo"/> Legalesign Music Store : Top {musicData.length}(50) Albums
               </h1>
 
               <div className="relative flex justify-between mb-4 w-auto text-left">
@@ -128,9 +128,13 @@ const MusicLibrary = () => {
                 </div>
               </div>
 
+              {q && (
+                <p class="text-gray-300 mb-3">Showing {filteredData.length} results for " {q} "</p>
+              )}
+
               {filteredData.map(function (e, index) {
                 return (
-                  <Album key={index} albumData={e} selAlbum={selectedAlbum} albumSelection={albumSelection}
+                  <Album key={index} index={index+1} albumData={e} selAlbum={selectedAlbum} albumSelection={albumSelection}
                   ></Album>
                 )
               }
