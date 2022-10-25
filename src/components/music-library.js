@@ -129,7 +129,12 @@ const MusicLibrary = () => {
               </div>
 
               {q && (
-                <p class="text-gray-300 mb-3">Showing {filteredData.length} results for " {q} "</p>
+                <>
+                  {filteredData.length > 0 ? (
+                    <p class="text-gray-300 mb-3">Showing {filteredData.length} results for " {q} "</p>
+                  ) : <p class="text-gray-300 mb-3">No results for " {q} "</p>
+                  }
+                </>
               )}
 
               {filteredData.map(function (e, index) {
