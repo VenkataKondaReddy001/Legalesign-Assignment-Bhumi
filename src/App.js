@@ -4,13 +4,9 @@ import MusicLibrary from './components/music-library';
 
 function App() {
   return (
-    <div>
-        <div className="container mt-3">
-          <Routes>
-            <Route path="/" element={<MusicLibrary/>} />
-          </Routes>
-        </div>
-      </div>
+    <Routes>
+      <Route path="/" element={<MusicLibrary />} />
+    </Routes>
   );
 }
 
