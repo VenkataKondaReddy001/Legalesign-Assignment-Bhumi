@@ -5,7 +5,6 @@ import Footer from './footer/footer';
 import Header from './header/header';
 
 const MusicLibrary = () => {
-  const [loading, setLoading] = useState(false);
   const [showFilter, setShowFilter] = useState(false);
   const [filteredKey, setFilteredKey] = useState('Top Rated');
   const [musicData, setMusicData] = useState([]);
@@ -34,33 +33,23 @@ const MusicLibrary = () => {
     let data = JSON.parse(JSON.stringify(musicData))
     setFilteredKey(val)
     toggleFilter()
-    switch (inp) {
-      case 'ara':
-        data = data.sort((a, b) => (a['im:artist'].label).localeCompare(b['im:artist'].label));
-        setFilteredData(data)
-        return 0
-      case 'ard':
-        data = data.sort((a, b) => (b['im:artist'].label).localeCompare(a['im:artist'].label))
-        setFilteredData(data)
-        return 0
-      case 'ala':
-        data = data.sort((a, b) => (a.title.label).localeCompare(b.title.label));
-        setFilteredData(data)
-        return 0
-      case 'ald':
-        data = data.sort((a, b) => (b.title.label).localeCompare(a.title.label))
-        setFilteredData(data)
-        return 0
 
-      case 'lr':
-        data = data.sort((a, b) => { return new Date(b['im:releaseDate'].label) - new Date(a['im:releaseDate'].label) });
-        setFilteredData(data)
-        return 0
-      case 'or':
-        data = data.sort((a, b) => { return new Date(a['im:releaseDate'].label) - new Date(b['im:releaseDate'].label) });
-        setFilteredData(data)
-        return 0
+    if(inp == 'ara'){
+      data = data.sort((a, b) => (a['im:artist'].label).localeCompare(b['im:artist'].label));
+    }else if(inp == 'ard'){
+      data = data.sort((a, b) => (b['im:artist'].label).localeCompare(a['im:artist'].label))
+    }else if(inp == 'ala'){
+      data = data.sort((a, b) => (a.title.label).localeCompare(b.title.label));
+    }else if(inp == 'ald'){
+      data = data.sort((a, b) => (b.title.label).localeCompare(a.title.label))
+    }else if(inp == 'lr'){
+      data = data.sort((a, b) => { return new Date(b['im:releaseDate'].label) - new Date(a['im:releaseDate'].label) });
+    }else{
+      data = data.sort((a, b) => { return new Date(a['im:releaseDate'].label) - new Date(b['im:releaseDate'].label) });
     }
+
+    setFilteredData(data)
+
   }
 
   const toggleFilter = () => {
