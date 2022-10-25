@@ -36,20 +36,3 @@ const Album = ({ albumData, selectedAlbum, albumSelection }) => {
 };
 
 export default Album;
-
-/*<ul className="album">
-
-    <li className="album-item">
-        <a href={link} target="blank" className="link">
-            <img className="album-img" src={albumData["im:image"][2].label} alt={'itunes' + Math.random()} />
-        </a>
-    </li>
-
-    <li className="title album-item">
-        <a href={link} target="blank" className="link">
-            {title.slice(0, 20)}..</a></li>
-    <li className="price album-item">Price:{price}</li>
-
-    <li className="date album-item">Released:{date}</li>
-
-</ul> */

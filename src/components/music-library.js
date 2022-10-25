@@ -42,6 +42,10 @@ const MusicLibrary = () => {
       data = data.sort((a, b) => (a.title.label).localeCompare(b.title.label));
     }else if(inp == 'ald'){
       data = data.sort((a, b) => (b.title.label).localeCompare(a.title.label))
+    }else if(inp == 'pa'){
+      data = data.sort((a, b) => { return b['im:price'].label.split("$")[1] - a['im:price'].label.split("$")[1] });
+    }else if(inp == 'pd'){
+      data = data.sort((a, b) => { return a['im:price'].label.split("$")[1] - b['im:price'].label.split("$")[1] });
     }else if(inp == 'lr'){
       data = data.sort((a, b) => { return new Date(b['im:releaseDate'].label) - new Date(a['im:releaseDate'].label) });
     }else{
@@ -111,6 +115,9 @@ const MusicLibrary = () => {
 
                     <a className="cursor-pointer text-gray-700 block px-4 py-2 text-sm" role="menuitem" onClick={() => { filterBy('ala', 'Album A-Z') }}>Album A-Z</a>
                     <a className="cursor-pointer text-gray-700 block px-4 py-2 text-sm" role="menuitem" onClick={() => { filterBy('ald', 'Album Z-A') }}>Album Z-A</a>
+
+                    <a className="cursor-pointer text-gray-700 block px-4 py-2 text-sm" role="menuitem" onClick={() => { filterBy('pd', 'Price Low to High') }}>Price Low to High</a>
+                    <a className="cursor-pointer text-gray-700 block px-4 py-2 text-sm" role="menuitem" onClick={() => { filterBy('pa', 'Price High to Low') }}>Price High to Low</a>
 
                   </div>
                 </div>
