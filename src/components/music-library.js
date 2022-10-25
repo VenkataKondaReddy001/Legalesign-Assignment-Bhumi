@@ -25,7 +25,12 @@ const MusicLibrary = () => {
   }, [])
 
   const resetArtistList = (inpData) => {
-    const data = inpData.map((ech) => ({ name: ech['im:artist'].label, image: ech["im:image"][2].label }))//.reduce((acc, char) => acc.includes(char) ? acc : [...acc, char], []);
+    const data = inpData.map((ech) => ({ name: ech['im:artist'].label, image: ech["im:image"][2].label })).reduce((unique, o) => {
+      if(!unique.some(obj => obj.name === o.name && obj.value === o.value)) {
+        unique.push(o);
+      }
+      return unique;
+    },[]);
     setArtists(data)
   }
 
