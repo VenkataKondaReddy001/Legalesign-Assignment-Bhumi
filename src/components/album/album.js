@@ -18,6 +18,7 @@ const Album = ({ albumData, selectedAlbum, albumSelection }) => {
                 <div className="flex flex-col" title={albumData.title.label}>
                     <div className="text-md font-bold" >{albumData["im:name"].label.slice(0, 80)}</div>
                     <div className="text-sm">{albumData["im:artist"].label} ( {albumData["im:itemCount"].label} songs )</div>
+                    <div className="text-sm">{albumData["im:price"].label}</div>
                 </div>
                 <div className="flex items-center space-x-4 text-sm">
                     <Moment format="DD/MM/YYYY">{albumData['im:releaseDate'].label}</Moment>
