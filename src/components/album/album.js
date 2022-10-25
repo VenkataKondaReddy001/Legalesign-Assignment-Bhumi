@@ -10,7 +10,7 @@ const Album = ({ albumData, selectedAlbum, albumSelection }) => {
 
             <div className="flex items-center mr-5">
                 <a href={albumData.id.label} target="blank" className="link">
-                    <img className="album-img rounded-full w-8 h-8 border" src={albumData["im:image"][2].label} alt={'itunes' + Math.random()} />
+                    <img className="album-img rounded-full w-8 border" src={albumData["im:image"][2].label} alt={'itunes' + Math.random()} />
                 </a>
             </div>
 
