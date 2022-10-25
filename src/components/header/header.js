@@ -5,7 +5,7 @@ const Header = () => {
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="flex h-16 items-center justify-between">
                     <div className="flex items-center">
-                        <a className="flex-shrink-0" href="http://leglesign.com/" target="_blank">
+                        <a className="flex-shrink-0" href="http://leglesign.com/" target="_blank" rel="noreferrer">
                             <img className="h-8 w-auto" src="https://d3jakps06g0ret.cloudfront.net/static/img/logo/logo-svg.svg" alt="Legalesign" />
                         </a>
                     </div>
