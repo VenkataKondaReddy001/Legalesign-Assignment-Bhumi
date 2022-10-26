@@ -1,14 +1,15 @@
 # Legalesign Top 50 Albums
 
-Legalesign is venturing into the music business and here it is a sample preview of how it looks. Build it using JavaScript (or TypeScript) and React
+Legalesign is venturing into the music business and here it is a sample preview of how it looks.
+Project includes TypeScript and React.
 
 ### `Features`
 
 1) Displaying Top 50 albums data in a more design way and developing the most common header , footer for Legalesign company.
-2) Search functionality for name and artist, and filter functionality for ( Top Rated, Latest Releases, Old releases, Artist A-Z, Artist Z-A , Album A-Z, Album Z-A, Price Low to High, Price High to Low )
-3) added featured artists list
-4) link actions to reference pages implemented
-5) Responsive design for mobile, tablet and desktop
+2) Search functionality for name and artist, and filter functionality for ( Top Rated, Latest Releases, Old releases, Artist A-Z, Artist Z-A , Album A-Z, Album Z-A, Price Low to High, Price High to Low ).
+3) Added featured artists list.
+4) Link actions to reference pages implemented.
+5) Responsive design for mobile, tablet and desktop.
 
 ## Available Scripts
 
