@@ -40,21 +40,21 @@ const MusicLibrary = () => {
     setQ('')
     toggleFilter()
 
-    if(inp == 'ara'){
+    if(inp === 'ara'){
       data = data.sort((a, b) => (a['im:artist'].label).localeCompare(b['im:artist'].label));
-    }else if(inp == 'ard'){
+    }else if(inp === 'ard'){
       data = data.sort((a, b) => (b['im:artist'].label).localeCompare(a['im:artist'].label))
-    }else if(inp == 'ala'){
+    }else if(inp === 'ala'){
       data = data.sort((a, b) => (a.title.label).localeCompare(b.title.label));
-    }else if(inp == 'ald'){
+    }else if(inp === 'ald'){
       data = data.sort((a, b) => (b.title.label).localeCompare(a.title.label))
-    }else if(inp == 'pa'){
+    }else if(inp === 'pa'){
       data = data.sort((a, b) => { return b['im:price'].label.split("$")[1] - a['im:price'].label.split("$")[1] });
-    }else if(inp == 'pd'){
+    }else if(inp === 'pd'){
       data = data.sort((a, b) => { return a['im:price'].label.split("$")[1] - b['im:price'].label.split("$")[1] });
-    }else if(inp == 'lr'){
+    }else if(inp === 'lr'){
       data = data.sort((a, b) => { return new Date(b['im:releaseDate'].label) - new Date(a['im:releaseDate'].label) });
-    }else if(inp == 'or'){
+    }else if(inp === 'or'){
       data = data.sort((a, b) => { return new Date(a['im:releaseDate'].label) - new Date(b['im:releaseDate'].label) });
     }else{
       data = JSON.parse(JSON.stringify(musicData))
