@@ -37,6 +37,7 @@ const MusicLibrary = () => {
   const filterBy = (inp, val) => {
     let data = JSON.parse(JSON.stringify(musicData))
     setFilteredKey(val)
+    setQ('')
     toggleFilter()
 
     if(inp == 'ara'){
@@ -53,8 +54,10 @@ const MusicLibrary = () => {
       data = data.sort((a, b) => { return a['im:price'].label.split("$")[1] - b['im:price'].label.split("$")[1] });
     }else if(inp == 'lr'){
       data = data.sort((a, b) => { return new Date(b['im:releaseDate'].label) - new Date(a['im:releaseDate'].label) });
-    }else{
+    }else if(inp == 'or'){
       data = data.sort((a, b) => { return new Date(a['im:releaseDate'].label) - new Date(b['im:releaseDate'].label) });
+    }else{
+      data = JSON.parse(JSON.stringify(musicData))
     }
 
     setFilteredData(data)
