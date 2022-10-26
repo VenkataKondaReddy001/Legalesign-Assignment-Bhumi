@@ -9,7 +9,7 @@ const Album = ({ albumData, selectedAlbum, albumSelection, index }) => {
         <div className="overflow-hidden bg-gray-800 text-gray-300 w-full flex flex-row rounded-xl shadow-lg p-4 mb-2 cursor-pointer hover:bg-gray-900" >
 
             <div className="flex items-center">
-                <a href={albumData.id.label} target="blank" className="link">
+                <a href={albumData['im:artist'].attributes?.href} target="blank" className="link">
                     <img className="album-img rounded-full w-8 border" src={albumData["im:image"][2].label} alt={'itunes' + Math.random()} />
                 </a>
             </div>
