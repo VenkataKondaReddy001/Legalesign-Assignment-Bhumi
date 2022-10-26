@@ -114,18 +114,18 @@ const MusicLibrary = () => {
                 <div className={"absolute right-0 z-10 mt-10 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none " + (showFilter ? 'show' : 'hidden')} role="menu" aria-orientation="vertical" aria-labelledby="menu-button" >
                   <div className="py-1" role="none">
 
-                    <a className="cursor-pointer text-gray-700 block px-4 py-2 text-sm" role="menuitem" onClick={() => { filterBy('tr', 'Top Rated') }}>Top Rated</a>
-                    <a className="cursor-pointer text-gray-700 block px-4 py-2 text-sm" role="menuitem" onClick={() => { filterBy('lr', 'Latest Releases') }}>Latest Releases</a>
-                    <a className="cursor-pointer text-gray-700 block px-4 py-2 text-sm" role="menuitem" onClick={() => { filterBy('or', 'Old releases') }}>Old releases</a>
+                    <div className="cursor-pointer text-gray-700 block px-4 py-2 text-sm" role="menuitem" onClick={() => { filterBy('tr', 'Top Rated') }}>Top Rated</div>
+                    <div className="cursor-pointer text-gray-700 block px-4 py-2 text-sm" role="menuitem" onClick={() => { filterBy('lr', 'Latest Releases') }}>Latest Releases</div>
+                    <div className="cursor-pointer text-gray-700 block px-4 py-2 text-sm" role="menuitem" onClick={() => { filterBy('or', 'Old releases') }}>Old releases</div>
 
-                    <a className="cursor-pointer text-gray-700 block px-4 py-2 text-sm" role="menuitem" onClick={() => { filterBy('ara', 'Artist A-Z') }}>Artist A-Z</a>
-                    <a className="cursor-pointer text-gray-700 block px-4 py-2 text-sm" role="menuitem" onClick={() => { filterBy('ard', 'Artist Z-A') }}>Artist Z-A</a>
+                    <div className="cursor-pointer text-gray-700 block px-4 py-2 text-sm" role="menuitem" onClick={() => { filterBy('ara', 'Artist A-Z') }}>Artist A-Z</div>
+                    <div className="cursor-pointer text-gray-700 block px-4 py-2 text-sm" role="menuitem" onClick={() => { filterBy('ard', 'Artist Z-A') }}>Artist Z-A</div>
 
-                    <a className="cursor-pointer text-gray-700 block px-4 py-2 text-sm" role="menuitem" onClick={() => { filterBy('ala', 'Album A-Z') }}>Album A-Z</a>
-                    <a className="cursor-pointer text-gray-700 block px-4 py-2 text-sm" role="menuitem" onClick={() => { filterBy('ald', 'Album Z-A') }}>Album Z-A</a>
+                    <div className="cursor-pointer text-gray-700 block px-4 py-2 text-sm" role="menuitem" onClick={() => { filterBy('ala', 'Album A-Z') }}>Album A-Z</div>
+                    <div className="cursor-pointer text-gray-700 block px-4 py-2 text-sm" role="menuitem" onClick={() => { filterBy('ald', 'Album Z-A') }}>Album Z-A</div>
 
-                    <a className="cursor-pointer text-gray-700 block px-4 py-2 text-sm" role="menuitem" onClick={() => { filterBy('pd', 'Price Low to High') }}>Price Low to High</a>
-                    <a className="cursor-pointer text-gray-700 block px-4 py-2 text-sm" role="menuitem" onClick={() => { filterBy('pa', 'Price High to Low') }}>Price High to Low</a>
+                    <div className="cursor-pointer text-gray-700 block px-4 py-2 text-sm" role="menuitem" onClick={() => { filterBy('pd', 'Price Low to High') }}>Price Low to High</div>
+                    <div className="cursor-pointer text-gray-700 block px-4 py-2 text-sm" role="menuitem" onClick={() => { filterBy('pa', 'Price High to Low') }}>Price High to Low</div>
 
                   </div>
                 </div>
