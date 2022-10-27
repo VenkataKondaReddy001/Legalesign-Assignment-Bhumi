@@ -3,10 +3,9 @@ import './album.css'
 
 const Album = ({ albumData, selectedAlbum, albumSelection, index }) => {
 
-
     return (
 
-        <div className="overflow-hidden bg-gray-800 text-gray-300 w-full flex flex-row rounded-xl shadow-lg p-4 mb-2 cursor-pointer hover:bg-gray-900" >
+        <div className={"overflow-hidden bg-gray-800 text-gray-300 w-full flex flex-row rounded-xl shadow-lg p-4 mb-2 cursor-pointer hover:bg-gray-900 " + (selectedAlbum?.id.attributes['im:id'] == albumData?.id.attributes['im:id'] ? 'border' : '')} onClick={() => {albumSelection(albumData)}}>
 
             <div className="flex items-center">
                 <a href={albumData['im:artist'].attributes?.href} target="blank" className="link">
@@ -14,7 +13,7 @@ const Album = ({ albumData, selectedAlbum, albumSelection, index }) => {
                 </a>
             </div>
 
-            <div className="flex flex-row items-center w-full pl-3 md:pl-5 md:pl-6 lg:pl-6" onClick={albumSelection(albumData)}>
+            <div className="flex flex-row items-center w-full pl-3 md:pl-5 md:pl-6 lg:pl-6">
                 <div className="flex flex-col w-9/12" title={albumData.title.label}>
                     <div className="text-md font-bold h-6 truncate" >{index} . {albumData["im:name"].label}</div>
                     <div className="text-sm">{albumData["im:artist"].label} ( {albumData["im:itemCount"].label} songs )</div>
