@@ -5,7 +5,7 @@ const Album = ({ albumData, selectedAlbum, albumSelection, index }) => {
 
     return (
 
-        <div className={"overflow-hidden bg-gray-800 text-gray-300 w-full flex flex-row rounded-xl shadow-lg p-4 mb-2 cursor-pointer hover:bg-gray-900 " + (selectedAlbum?.id.attributes['im:id'] == albumData?.id.attributes['im:id'] ? 'border' : '')} onClick={() => {albumSelection(albumData)}}>
+        <div className={"overflow-hidden bg-gray-800 text-gray-300 w-full flex flex-row rounded-xl shadow-lg p-4 mb-2 cursor-pointer hover:bg-gray-900 " + (selectedAlbum?.id.attributes['im:id'] === albumData?.id.attributes['im:id'] ? 'border' : '')} onClick={() => {albumSelection(albumData)}}>
 
             <div className="flex items-center">
                 <a href={albumData['im:artist'].attributes?.href} target="blank" className="link">
