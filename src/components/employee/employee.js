@@ -28,15 +28,9 @@ const Employee = () => {
 
     const alphaOrder = () => {
         let data = []
-        let eid = []
         listEmployeeIds().then(x => x.forEach((ech) => { 
-            getEmployeeById(ech).then(x => {data.push(x);setAscendingEmployees(data)})
+            getEmployeeById(ech).then(x => {console.log(x,data);data.push(x);setAscendingEmployees(data)})
          } ))
-        let uniqueIds = getUniqIds()
-        console.log(uniqueIds, eid, data)
-        uniqueIds.forEach((ech) => { 
-            console.log(getEmployeeById(ech).then(x => console.log(x)))
-         } )
     }
 
     const getUniqIds = () => {
@@ -49,17 +43,18 @@ const Employee = () => {
     }
 
     const orderByAsc = (data) => {
-        return data.sort((a, b) => (a['name']).localeCompare(b['name']))
+        const filteredArr = data.reduce((acc, current) => {const x = acc.find(item => item.id === current.id);if (!x) {return acc.concat([current]);} else {return acc;}}, []).sort((a, b) => (a['name']).localeCompare(b['name']));
+        return filteredArr
     }
 
     return (
         <>
-        {orderByAsc(ascendingEmployees).map((ech) => {
+        {orderByAsc(ascendingEmployees).map((ech, index) => {
             return (
-                <>
+                <div key={index}>
                 <h1>{ech['id']}</h1>
                 <h1>{ech['name']}</h1>
-                </>
+                </div>
             )
         })
 
