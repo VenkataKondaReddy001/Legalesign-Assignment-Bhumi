@@ -4,6 +4,7 @@ const { useState, useEffect } = require("react");
 
 const Employee = () => {
 
+    const [eid, setEid] = useState([])
     const [ascendingEmployees, setAscendingEmployees] = useState([])
 
     const listEmployeeIds = async () => {
@@ -21,28 +22,28 @@ const Employee = () => {
     };
 
     useEffect(() => {
+        listEmployeeIds().then(x => setEid(x))
         alphaOrder()
-        getUniqIds()
     }, [])
 
     const alphaOrder = () => {
         let data = []
-        getUniqIds().then(x => x.forEach((ech) => { 
-            getEmployeeById(ech).then(x => {data.push(x);setAscendingEmployees(data)})
+        listEmployeeIds().then(x => x.forEach((ech) => { 
+            getEmployeeById(ech).then(x => {console.log(x,data);data.push(x);setAscendingEmployees(data)})
          } ))
     }
 
-    const getUniqIds = async () => {
-        let eids = []
-        await listEmployeeIds().then(x => { eids = x; } )
-        eids = eids.filter(function(item, pos) {
-            return eids.indexOf(item) == pos;
+    const getUniqIds = () => {
+        let data = []
+        listEmployeeIds().then(x => { data.push(x) } )
+        let uniqueIds = data.filter(function(item, pos) {
+            return data.indexOf(item) == pos;
         })
-        return eids
+        return uniqueIds
     }
 
     const orderByAsc = (data) => {
-        const filteredArr = data.sort((a, b) => (a['name']).localeCompare(b['name']));
+        const filteredArr = data.reduce((acc, current) => {const x = acc.find(item => item.id === current.id);if (!x) {return acc.concat([current]);} else {return acc;}}, []).sort((a, b) => (a['name']).localeCompare(b['name']));
         return filteredArr
     }
 
